@@ -1,0 +1,13 @@
+input, select, textarea {
+
+}
+
+.input-group {
+  @apply text-[#555555];
+  @apply border rounded px-2 py-1;
+  @apply inline-block;
+
+  > * {
+    @apply inline;
+  }
+}
