@@ -14,13 +14,16 @@ class Travel extends Model
 
     protected $fillable = [
         'name',
-        'slug',
         'metaTitle',
         'metaDescription',
         'price',
         'duration',
         'shortDescription',
         'description',
+    ];
+
+    protected $guarded = [
+        'slug',
     ];
 
     public function Travel(){
