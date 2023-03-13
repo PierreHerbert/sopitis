@@ -16,7 +16,7 @@ class Image extends Model
         'alt',
     ];
 
-    public function image(){
+    public function collections(){
     
         return $this->belongsToMany(
             Image::class,

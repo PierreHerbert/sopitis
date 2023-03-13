@@ -14,7 +14,7 @@ class OptionFilter extends Model
         'value',
     ];
 
-    public function optionsfiltres(){
+    public function travels(){
         
         return $this->belongsToMany(
             OptionFilter::class,

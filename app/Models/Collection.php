@@ -9,7 +9,7 @@ class Collection extends Model
 {
     use HasFactory;
 
-    public function collection(){
+    public function images(){
     
         return $this->belongsToMany(
             Collection::class,

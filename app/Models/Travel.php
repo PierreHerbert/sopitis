@@ -26,7 +26,7 @@ class Travel extends Model
         'slug',
     ];
 
-    public function Travel(){
+    public function filters(){
     
         return $this->belongsToMany(
             Travel::class,
