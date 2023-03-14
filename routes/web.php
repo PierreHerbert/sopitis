@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TravelController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/travels', [TravelController::class, 'index'])->name('travels.index');
+Route::get('/travels/{travel:slug}', [TravelController::class, 'show'])->name('travels.show');
 
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 { 

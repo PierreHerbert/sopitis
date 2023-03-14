@@ -3,7 +3,7 @@
     <nav>
         <ul>
             <li>
-                <a href="">Voyages</a>
+                <a href="{{ route('travels.index') }}">Voyages</a>
             </li>
         </ul>
     </nav>

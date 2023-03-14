@@ -1,29 +1,24 @@
 @extends('layouts.app')
 
 @section('body')
-    <form method="post" action="{{ route('login.perform') }}">
-        
-        @csrf
-        
-        <h1 class="h3 mb-3 fw-normal">Login</h1>
+    <div class="h-full flex justify-center items-center">
+        <form method="post" action="{{ route('login.perform') }}" class="block w-full max-w-xl">
+            @csrf
 
-        <div class="form-group form-floating mb-3">
-            <input type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Username" required="required" autofocus>
-            <label for="floatingName">Email or Username</label>
-            @if ($errors->has('username'))
-                <span class="text-danger text-left">{{ $errors->first('username') }}</span>
-            @endif
-        </div>
-        
-        <div class="form-group form-floating mb-3">
-            <input type="password" class="form-control" name="password" value="{{ old('password') }}" placeholder="Password" required="required">
-            <label for="floatingPassword">Password</label>
-            @if ($errors->has('password'))
-                <span class="text-danger text-left">{{ $errors->first('password') }}</span>
-            @endif
-        </div>
+            <h1 class="mb-5">Connexion</h1>
 
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+            <label for="floatingName">Adresse Email ou Nom d'utilisateur</label>
+            <div class="input-group mb-3">
+                <input type="text" class="" name="username" value="{{ old('username') }}" required autofocus>
+            </div>
 
-    </form>
+            <label for="floatingPassword">Mot de passe</label>
+            <div class="input-group form-floating mb-3">
+                <input type="password" class="" name="password" value="{{ old('password') }}" required>
+            </div>
+
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Connexion</button>
+
+        </form>
+    </div>
 @endsection

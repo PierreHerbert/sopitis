@@ -25,6 +25,11 @@ class Travel extends Model
         'slug',
     ];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function filters(){
     
         return $this->belongsToMany(
