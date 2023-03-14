@@ -9,8 +9,7 @@ class Travel extends Model
 {
     use HasFactory;
 
-   
-
+    protected $table = 'travels';
 
     protected $fillable = [
         'name',
@@ -33,5 +32,9 @@ class Travel extends Model
             'travels-options-filters', // Table Pivot
             'travel_id', // Clé étrangere de la table voyages
             'option-filter_id'); // Clé étrangère 2nd table ( options-filtres )
+    }
+
+    public function image() {
+        return $this->hasOne(Image::class, 'id', 'image_id');
     }
 }
