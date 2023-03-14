@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Filter;
+use App\Models\OptionFilter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class FilterController extends Controller
 {
@@ -14,7 +16,7 @@ class FilterController extends Controller
     {
         $filters = Filter::get();
 
-        return view('filter.index',compact('filters'));
+        return view('dashboard.filters.index',compact('filters'));
     }
 
     /**
@@ -47,7 +49,7 @@ class FilterController extends Controller
      */
     public function show(Filter $filter)
     {
-        return view('filter.edit', [
+        return view('dashboard.filters.show', [
             'filter' => $filter
         ]);
     }
@@ -57,7 +59,7 @@ class FilterController extends Controller
      */
     public function edit(Filter $filter)
     {
-        return view('filter.edit', [
+        return view('dashboard.filters.edit', [
             'filter' => $filter
         ]);
     }
@@ -67,14 +69,23 @@ class FilterController extends Controller
      */
     public function update(Request $request, Filter $filter)
     {
-        $validate = $request->validate([
-            'nom' => 'required|max:255',
-            'slug,'
-        ]);
-        
-        $filter->update($validate);
+//        $validate = $request->validate([
+//            'nom' => 'required|max:255',
+//            'slug,'
+//        ]);
 
-        return redirect()->route('filter.index')
+        foreach ($request->options as $optionValue) {
+            $option = new OptionFilter();
+            $option->label = $optionValue;
+            $option->value = Str::slug($optionValue);
+            $option->filter()->associate($filter);
+
+            $option->save();
+        }
+        
+//        $filter->update($validate);
+
+        return redirect()->route('filters.index')
             ->withSuccess(__("Le filtre a été mis à jour !"));
     }
 

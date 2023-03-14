@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('home');
 })->name('index');
 
+Route::resource('/filters', \App\Http\Controllers\FilterController::class);
+
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 { 
 

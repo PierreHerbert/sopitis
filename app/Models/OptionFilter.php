@@ -24,6 +24,6 @@ class OptionFilter extends Model
     }
 
     public function filter() {
-        return $this->hasMany(Filter::class, 'id', 'filter_id');
+        return $this->belongsTo(Filter::class, 'filter_id', 'id');
     }
 }
