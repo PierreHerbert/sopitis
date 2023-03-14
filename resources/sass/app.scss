@@ -41,3 +41,19 @@
 body {
   @apply font-body;
 }
+
+.card {
+  @apply rounded overflow-hidden shadow-sm;
+}
+
+.card-header {
+  @apply p-3;
+}
+
+.card-body {
+  @apply p-3;
+}
+
+.card-footer {
+  @apply mt-5 py-5 border-t border-dashed;
+}
