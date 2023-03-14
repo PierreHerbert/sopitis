@@ -22,7 +22,9 @@ return new class extends Migration
             $table->string('shortDescription');
             $table->text('description');
             $table->timestamps();
-
+            $table->foreignid('image_id')
+                ->constrained('images')
+                ->onDelete('cascade');
         });
     }
 

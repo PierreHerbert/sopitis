@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('options-filters', function (Blueprint $table) {
+        Schema::create('option_filters', function (Blueprint $table) {
             $table->id();
             $table->string('label');
             $table->string('value');
             $table->timestamps();
+            $table->foreignid('filter_id')
+                ->constrained('filters')
+                ->onDelete('cascade');
         });
     }
 
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('options-filters');
+        Schema::dropIfExists('options_filters');
     }
 };

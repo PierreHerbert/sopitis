@@ -22,4 +22,8 @@ class OptionFilter extends Model
             'option-filter_id', // Clé étrangere de la table options-filtres
             'travel_id'); // Clé étrangère 2nd table ( voyages )
     }
+
+    public function filter() {
+        return $this->hasMany(Filter::class, 'id', 'filter_id');
+    }
 }

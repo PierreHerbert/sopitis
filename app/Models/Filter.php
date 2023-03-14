@@ -13,4 +13,8 @@ class Filter extends Model
         'name',
         'slug',
     ];
+
+    public function options() {
+        return $this->belongsTo(OptionFilter::class, 'id', 'filter_id');
+    }
 }

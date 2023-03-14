@@ -1,0 +1,11 @@
+html, body {
+  @apply h-full;
+}
+
+section {
+  @apply mt-5;
+}
+
+label {
+  @apply font-bold block mb-1;
+}
