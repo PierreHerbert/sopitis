@@ -19,9 +19,9 @@ return new class extends Migration
             ->constrained('travels')
             ->onDelete('cascade');
 
-            $table->foreignid('option-filter_id')
+            $table->foreignid('option_filter_id')
             ->nullable()
-            ->constrained('options-filters')
+//            ->constrained('options-filters')
             ->onDelete('cascade');
         });
     }
