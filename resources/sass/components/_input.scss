@@ -2,6 +2,7 @@
   @apply text-[#555555];
   @apply border rounded ;
   @apply flex items-center;
+  @apply bg-white;
 
   input, select, textarea {
     @apply w-full px-2 py-1;
@@ -11,17 +12,17 @@
     outline: 0;
   }
 
-  select {
+  select, input {
     @apply bg-transparent;
     appearance: none;
   }
 
-  &:first-child {
-    @apply pl-1;
+  &>:first-child {
+    @apply pl-1.5;
   }
 
-  &:first-child {
-    @apply pr-1;
+  &>:last-child {
+    @apply pr-1.5;
   }
 }
 

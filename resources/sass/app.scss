@@ -9,7 +9,7 @@
     @apply text-3xl;
   }
   h2 {
-    @apply text-xl;
+    @apply text-2xl;
   }
   h3 {
     @apply text-lg;
@@ -23,7 +23,7 @@
 
 .header {
   @apply flex justify-between items-center;
-  @apply px-48 py-5;
+  @apply px-10 lg:px-48 py-5;
   @apply shadow-sm;
 
   .brand {
@@ -43,7 +43,7 @@ body {
 }
 
 .card {
-  @apply rounded overflow-hidden shadow-sm;
+  @apply relative rounded overflow-hidden shadow-sm;
 }
 
 .card-header {
