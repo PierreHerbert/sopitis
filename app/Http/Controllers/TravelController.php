@@ -58,7 +58,7 @@ class TravelController extends Controller
         $travel->image()->associate($addImageTravel);  
         $travel->save();
     }
-
+    
     /**
      * Display the specified resource.
      */
