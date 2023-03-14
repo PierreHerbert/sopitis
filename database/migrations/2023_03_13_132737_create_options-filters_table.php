@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('options-filters', function (Blueprint $table) {
+        Schema::create('option_filters', function (Blueprint $table) {
             $table->id();
             $table->string('label');
             $table->string('value');
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('options-filters');
+        Schema::dropIfExists('options_filters');
     }
 };

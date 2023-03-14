@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('collections-images', function (Blueprint $table) {
+        Schema::create('collections_images', function (Blueprint $table) {
             $table->id();
 
             $table->foreignid('image_id')
@@ -31,7 +31,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('collections-images');
+        Schema::dropIfExists('collections_images');
         
     }
 };

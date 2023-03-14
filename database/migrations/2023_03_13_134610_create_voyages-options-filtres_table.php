@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('travels-options-filters', function (Blueprint $table) {
+        Schema::create('travels_options_filters', function (Blueprint $table) {
             $table->id();
 
             $table->foreignid('travel_id')
@@ -31,7 +31,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('travels-options-filters');
+        Schema::dropIfExists('travels_options_filters');
         
     }
 };
