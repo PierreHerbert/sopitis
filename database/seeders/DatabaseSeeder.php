@@ -3,7 +3,12 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Filter;
+use App\Models\Image;
+use App\Models\OptionFilter;
+use App\Models\Travel;
 use Illuminate\Database\Seeder;
+use Psy\Input\FilterOptions;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,5 +23,21 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        Filter::factory(10)->create();
+
+        Filter::all()->map(function(Filter $filter) {
+
+        });
+
+        Image::factory()->create([
+            'name' => 'Placeholder Travel Image',
+            'file' => 'images/travel-placeholder.jpg',
+            'alt' => 'Placeholder image pour voyage'
+        ]);
+
+        Travel::factory(500)->create([
+            'image_id' => 1
+        ]);
     }
 }
