@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('label');
             $table->string('value');
             $table->timestamps();
+            $table->foreignid('filter_id')
+                ->constrained('filters')
+                ->onDelete('cascade');
         });
     }
 
