@@ -1,13 +1,30 @@
-input, select, textarea {
-
-}
-
 .input-group {
   @apply text-[#555555];
-  @apply border rounded px-2 py-1;
-  @apply inline-block;
+  @apply border rounded ;
+  @apply flex items-center;
 
-  > * {
-    @apply inline;
+  input, select, textarea {
+    @apply w-full px-2 py-1;
   }
+
+  input:focus {
+    outline: 0;
+  }
+
+  select {
+    @apply bg-transparent;
+    appearance: none;
+  }
+
+  &:first-child {
+    @apply pl-1;
+  }
+
+  &:first-child {
+    @apply pr-1;
+  }
+}
+
+.input-group:focus-within {
+  @apply ring;
 }
