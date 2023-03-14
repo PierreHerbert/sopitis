@@ -16,7 +16,8 @@ class TravelController extends Controller
      */
     public function index()
     {
-        //
+        $travels = Travel::get();
+        return view('travel.index',compact('travels'));
     }
 
     /**
@@ -63,7 +64,9 @@ class TravelController extends Controller
      */
     public function show(Travel $travel)
     {
-        //
+        return view('travels.edit', [
+            'travel' => $travel
+        ]);
     }
 
     /**
@@ -108,6 +111,8 @@ class TravelController extends Controller
      */
     public function destroy(Travel $travel)
     {
-        //
+        $travel->delete();
+
+        return redirect()->route('travels.index');
     }
 }
